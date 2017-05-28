@@ -1,0 +1,22 @@
+---
+title: "Report"
+output: pdf_document
+---
+
+
+```{r, echo=FALSE}
+library(ASSRFourier)
+library(rmarkdown)
+if(plot_all==TRUE){
+   print(FouierCSVToPlot(data.path, freq = freq))
+}
+```
+
+```{r, echo=FALSE}
+library(ASSRFourier)
+if(plot_single==TRUE){
+  for(i in 1:length(data.path)){
+   print(FouierCSVToPlot(data.path[i], freq = freq, title=title[i]))
+  }
+}
+```
