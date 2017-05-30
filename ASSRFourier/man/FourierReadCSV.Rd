@@ -4,10 +4,12 @@
 \alias{FourierReadCSV}
 \title{Reading csv file}
 \usage{
-FourierReadCSV(data.path)
+FourierReadCSV(data.paths = NULL, dir)
 }
 \arguments{
-\item{data.path}{path to file}
+\item{data.paths}{path to file or vector of paths to files}
+
+\item{dir}{directory with files}
 }
 \value{
 An object of class data.frame, containing values of ... for specified frequencies.

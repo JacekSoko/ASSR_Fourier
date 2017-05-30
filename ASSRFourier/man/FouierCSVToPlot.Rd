@@ -4,7 +4,8 @@
 \alias{FouierCSVToPlot}
 \title{Draw a plot from CSV file}
 \usage{
-FouierCSVToPlot(data.path, freq = c(400, 4100), title = NA, names = NULL)
+FouierCSVToPlot(data.path, freq = c(400, 4100), title = "", names = NULL,
+  sqrt.trans = TRUE)
 }
 \arguments{
 \item{data.path}{path to file}
@@ -14,6 +15,8 @@ FouierCSVToPlot(data.path, freq = c(400, 4100), title = NA, names = NULL)
 \item{title}{title of the plot}
 
 \item{names}{names for plot legend}
+
+\item{sqrt.trans}{square root axist transformation}
 }
 \value{
 An object of class ggplot.

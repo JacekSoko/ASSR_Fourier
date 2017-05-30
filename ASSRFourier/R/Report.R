@@ -5,15 +5,17 @@
 #' @param data.path vector of paths to files.
 #' @param freq frequencies to show on x axis
 #' @param title a vecor of titles of the plots
-#' @param plot_all show plot with all samples
-#' @param plot_single show single plots
+#' @param plot.all show plot with all samples
+#' @param plot.single show single plots
+#' @param sqrt.trans square root axist transformation
+#' @param names names for plot legend
 #'
 #' @return A pdf report.
 #'
 #' @importFrom rmarkdown render
 #'
 #' @export
-GenerateReport <- function(data.path, freq=c(400,4100), title=NA, plot_all=TRUE, plot_single=FALSE){
+GenerateReport <- function(data.path, freq=c(400,4100), title=NA, plot.all=TRUE, plot.single=FALSE, names=NULL, sqrt.trans=TRUE){
   directory <- getwd()
 
   environment <- new.env()
@@ -21,8 +23,9 @@ GenerateReport <- function(data.path, freq=c(400,4100), title=NA, plot_all=TRUE,
   environment$data.path <- data.path
   environment$freq <- freq
   environment$title <- title
-  environment$plot_all <- plot_all
-  environment$plot_single <- plot_single
+  environment$plot.all <- plot.all
+  environment$plot.single <- plot.single
+  environment$sqrt.trans <- sqrt.trans
 
 
 

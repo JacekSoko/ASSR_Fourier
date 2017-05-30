@@ -10,9 +10,10 @@ shinyUI(fluidPage(
                          'text/comma-separated-values,text/plain',
                          '.csv')),
       sliderInput("range", "Range:",
-                  min = 0, max = 25550, value = c(400,4100)),
-      checkboxInput("show_plot_all", "All on one plot", value = TRUE),
-      checkboxInput("show_plots", "Single plots", value = FALSE),
+                  min = 0, max = 25550, value = c(400,4100), step=100),
+      checkboxInput("show_plot_all", "Plot profiles", value = TRUE),
+      checkboxInput("show_plots", "Plot single profiles", value = FALSE),
+      checkboxInput("sqrt_trans", "Square root transformations", value = TRUE),
       downloadLink('pdflink', "Download pdf")
     ),
     mainPanel(

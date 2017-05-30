@@ -1,22 +1,24 @@
 ---
 title: "Report"
 output: pdf_document
+geometry: margin=0.5in
 ---
 
 
 ```{r, echo=FALSE}
 library(ASSRFourier)
 library(rmarkdown)
-if(plot_all==TRUE){
-   print(FouierCSVToPlot(data.path, freq = freq))
+if(plot.all==TRUE){
+   print(FouierCSVToPlot(data.path, freq = freq, names=names, sqrt.trans=sqrt.trans))
 }
 ```
 
 ```{r, echo=FALSE}
 library(ASSRFourier)
-if(plot_single==TRUE){
+if(plot.single==TRUE){
   for(i in 1:length(data.path)){
-   print(FouierCSVToPlot(data.path[i], freq = freq, title=title[i]))
+   print(FouierCSVToPlot(data.path[i], freq = freq, title=title[i], sqrt.trans=sqrt.trans))
+  cat("\n\n")
   }
 }
 ```

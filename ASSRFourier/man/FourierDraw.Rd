@@ -4,7 +4,8 @@
 \alias{FourierDraw}
 \title{Draw a plot}
 \usage{
-FourierDraw(data.means, freq = c(400, 4100), title = "")
+FourierDraw(data.means, freq = c(400, 4100), title = "",
+  sqrt.trans = TRUE)
 }
 \arguments{
 \item{data.means}{data.frame with means for frequencies}
@@ -12,6 +13,8 @@ FourierDraw(data.means, freq = c(400, 4100), title = "")
 \item{freq}{frequencies to show on x axis}
 
 \item{title}{title of the plot}
+
+\item{sqrt.trans}{square root axist transformation}
 }
 \value{
 An object of class ggplot.

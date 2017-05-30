@@ -5,7 +5,7 @@
 \title{Generating reports form files}
 \usage{
 GenerateReport(data.path, freq = c(400, 4100), title = NA,
-  plot_all = TRUE, plot_single = FALSE)
+  plot.all = TRUE, plot.single = FALSE, names = NULL, sqrt.trans = TRUE)
 }
 \arguments{
 \item{data.path}{vector of paths to files.}
@@ -14,9 +14,13 @@ GenerateReport(data.path, freq = c(400, 4100), title = NA,
 
 \item{title}{a vecor of titles of the plots}
 
-\item{plot_all}{show plot with all samples}
+\item{plot.all}{show plot with all samples}
 
-\item{plot_single}{show single plots}
+\item{plot.single}{show single plots}
+
+\item{names}{names for plot legend}
+
+\item{sqrt.trans}{square root axist transformation}
 }
 \value{
 A pdf report.
