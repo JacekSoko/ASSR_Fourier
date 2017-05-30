@@ -4,7 +4,7 @@ shinyUI(fluidPage(
   titlePanel("Plots"),
   sidebarLayout(
     sidebarPanel(
-      fileInput('files', 'Choose CSV File',
+      fileInput('files', 'Choose CSV Files',
                 multiple = TRUE,
                 accept=c('text/csv',
                          'text/comma-separated-values,text/plain',
