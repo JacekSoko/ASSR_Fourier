@@ -4,11 +4,13 @@
 \alias{FouierCSVToPlot}
 \title{Draw a plot from CSV file}
 \usage{
-FouierCSVToPlot(data.path, freq = c(400, 4100), title = "", names = NULL,
-  sqrt.trans = TRUE)
+FouierCSVToPlot(data.path = NULL, dir = NULL, freq = c(400, 4100),
+  title = "", names = NULL, sqrt.trans = TRUE)
 }
 \arguments{
 \item{data.path}{path to file}
+
+\item{dir}{directory with files}
 
 \item{freq}{frequencies to show on x axis}
 
