@@ -186,7 +186,7 @@ FourierAggr <- function(dir, save=FALSE, name=NULL, plots=TRUE, freq=c(400,4100)
     dirs <- files[which(substr(files, nchar(files)-3, nchar(files))!= ".csv")]
     for(i in 1:length(dirs)){
       dirs.files <- list.files(dirs[i], full.names = TRUE)
-      nam <- GetName(dirs.files[1])
+      nam <- GetName(dirs[i])
       cat(nam,"\n")
       data <- FourierReadCSV(dirs.files)
       profiles[[nam]] <- FourierMeans(data)
