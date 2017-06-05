@@ -5,7 +5,7 @@
 \title{Aggregatiing data from csv files}
 \usage{
 FourierAggr(dir, save = FALSE, name = NULL, plots = TRUE, freq = c(400,
-  4100), sqrt.trans = TRUE)
+  5000), sqrt.trans = TRUE)
 }
 \arguments{
 \item{dir}{directory with folders related to patients}

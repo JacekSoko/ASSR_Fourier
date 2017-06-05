@@ -4,7 +4,7 @@
 \alias{FouierCSVToPlot}
 \title{Draw a plot from CSV file}
 \usage{
-FouierCSVToPlot(data.path = NULL, dir = NULL, freq = c(400, 4100),
+FouierCSVToPlot(data.path = NULL, dir = NULL, freq = c(400, 5000),
   title = "", names = NULL, sqrt.trans = TRUE)
 }
 \arguments{

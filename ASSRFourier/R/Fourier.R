@@ -66,19 +66,23 @@ FourierMeans <- function(data, names=NULL){
 #' @importFrom ggplot2 scale_x_continuous
 #' @importFrom ggplot2 coord_trans
 #' @importFrom ggplot2 element_blank
+#' @importFrom ggplot2 scale_shape_manual
 #' @importFrom dplyr filter
 #' @importFrom reshape2 melt
 #'
 #'
 #' @export
 
-FourierDraw <- function(data.means, freq=c(400,4100), title="", sqrt.trans=TRUE){
+FourierDraw <- function(data.means, freq=c(400,5000), title="", sqrt.trans=TRUE){
   dat.means.s <- filter(data.means, Frequency < freq[2], Frequency > freq[1])
   data_long <- melt(dat.means.s, id.vars=c("Frequency"))
   colnames(data_long) <- c("Frequency", "names", "avg")
 
-  plot <- ggplot(data_long, aes(Frequency, avg, color=names)) +
-    geom_line() + geom_point() +
+  plot <- ggplot(data_long, aes(Frequency, avg, color=names, shape=names)) +
+    geom_line() +
+    #geom_point(data=data_long, mapping=aes(Frequency, avg, color=names,fill=names), size=3, shape=21)+
+    geom_point(size=3) +
+    scale_shape_manual(values=LETTERS)+
     ggtitle(title) +
     theme_bw()+
     theme(legend.title =element_blank(),
@@ -111,7 +115,7 @@ FourierDraw <- function(data.means, freq=c(400,4100), title="", sqrt.trans=TRUE)
 #' @importFrom dplyr %>%
 #'
 #' @export
-FouierCSVToPlot <- function(data.path=NULL, dir=NULL , freq=c(400,4100), title="", names=NULL, sqrt.trans=TRUE){
+FouierCSVToPlot <- function(data.path=NULL, dir=NULL , freq=c(400,5000), title="", names=NULL, sqrt.trans=TRUE){
   if(!is.null(dir)){
   files <- list.files(dir, full.names = TRUE)
   names <- gsub(files, pattern =".*/", replacement = "")
@@ -139,11 +143,11 @@ FouierCSVToPlot <- function(data.path=NULL, dir=NULL , freq=c(400,4100), title="
 #' @importFrom ggplot2 ggsave
 #'
 #' @export
-FourierAggregatePlot <- function(data, freq=c(400,4100), sqrt.trans=TRUE){
+FourierAggregatePlot <- function(data, freq=c(400,5000), sqrt.trans=TRUE){
   names <- names(data)
   for(i in 1:length(data)){
     plot <- FourierDraw(data[[i]], freq=freq, sqrt.trans=sqrt.trans, title=names[i])
-    ggsave(paste0(names[i],".png"), plot = plot)
+    ggsave(paste0(names[i],".png"), plot = plot, width = 60, height=30, units = "cm")
   }
 }
 
@@ -171,7 +175,7 @@ FourierAggregatePlot <- function(data, freq=c(400,4100), sqrt.trans=TRUE){
 
 
 
-FourierAggr <- function(dir, save=FALSE, name=NULL, plots=TRUE, freq=c(400,4100), sqrt.trans=TRUE){
+FourierAggr <- function(dir, save=FALSE, name=NULL, plots=TRUE, freq=c(400,5000), sqrt.trans=TRUE){
   files <- list.files(dir, full.names = TRUE)
   profiles <- list()
   #csv

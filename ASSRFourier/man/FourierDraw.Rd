@@ -4,7 +4,7 @@
 \alias{FourierDraw}
 \title{Draw a plot}
 \usage{
-FourierDraw(data.means, freq = c(400, 4100), title = "",
+FourierDraw(data.means, freq = c(400, 5000), title = "",
   sqrt.trans = TRUE)
 }
 \arguments{
