@@ -9,7 +9,7 @@ geometry: margin=0.5in
 library(ASSRFourier)
 library(rmarkdown)
 if(plot.all==TRUE){
-   print(FouierCSVToPlot(data.path, freq = freq, names=names, sqrt.trans=sqrt.trans))
+   print(FouierCSVToPlot(data.path, freq = freq, names=names, log.trans=log.trans))
 }
 ```
 
@@ -17,7 +17,7 @@ if(plot.all==TRUE){
 library(ASSRFourier)
 if(plot.single==TRUE){
   for(i in 1:length(data.path)){
-   print(FouierCSVToPlot(data.path[i], freq = freq, title=title[i], sqrt.trans=sqrt.trans))
+   print(FouierCSVToPlot(data.path[i], freq = freq, title=title[i], log.trans=log.trans))
   cat("\n\n")
   }
 }

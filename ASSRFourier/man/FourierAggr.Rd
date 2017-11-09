@@ -5,7 +5,7 @@
 \title{Aggregatiing data from csv files}
 \usage{
 FourierAggr(dir, save = FALSE, name = NULL, plots = TRUE, freq = c(400,
-  5000), sqrt.trans = TRUE)
+  5000), log.trans = TRUE)
 }
 \arguments{
 \item{dir}{directory with folders related to patients}
@@ -16,7 +16,7 @@ FourierAggr(dir, save = FALSE, name = NULL, plots = TRUE, freq = c(400,
 
 \item{freq}{frequencies on x axis for plotting}
 
-\item{sqrt.trans}{square root axist transformation for plotting}
+\item{log.trans}{square root axist transformation for plotting}
 
 \item{saving}{data as .rda}
 }

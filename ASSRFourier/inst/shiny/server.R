@@ -16,19 +16,19 @@ shinyServer(function(input, output) {
                                  plot.all = input$show_plot_all,
                                  plot.single = input$show_plots,
                                  names = names,
-                                 sqrt.trans = input$sqrt_trans)
+                                 log.trans = input$log_trans)
 
       file.copy("report.pdf", file)
     }
   )
-  output$plot_all <- renderPlot({
+  output$plot_all <- renderPlotly({
     inFiles <- input$files
     if (is.null(inFiles)|| input$show_plot_all==FALSE)
       return(NULL)
     paths <- inFiles$datapath
     names <- sub(".csv", "", inFiles$name)
     freq <- input$range
-    plot <- ASSRFourier::FouierCSVToPlot(paths, freq=freq,title="", names=names, sqrt.trans = input$sqrt_trans)
+    plot <- ASSRFourier::FouierCSVToPlot(paths, freq=freq,title="", names=names, log.trans = input$log_trans, plotly = TRUE)
     return(plot)
   })
 
@@ -67,7 +67,7 @@ shinyServer(function(input, output) {
           path <- inFiles[[my_i, 'datapath']]
           name <- sub(".csv", "", inFiles[[my_i, 'name']])
           freq <- input$range
-          plot <- ASSRFourier::FouierCSVToPlot(path, freq=freq, title=name, sqrt.trans = input$sqrt_trans)
+          plot <- ASSRFourier::FouierCSVToPlot(path, freq=freq, title=name, log.trans = input$log_trans)
           return(plot)
         })
 

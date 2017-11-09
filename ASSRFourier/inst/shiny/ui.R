@@ -1,4 +1,5 @@
 library(shiny)
+library(plotly)
 
 shinyUI(fluidPage(
   titlePanel("Plots"),
@@ -13,12 +14,12 @@ shinyUI(fluidPage(
                   min = 0, max = 25550, value = c(400,5000), step=100),
       checkboxInput("show_plot_all", "Plot profiles", value = TRUE),
       checkboxInput("show_plots", "Plot single profiles", value = FALSE),
-      checkboxInput("sqrt_trans", "Square root transformations", value = TRUE),
+      checkboxInput("log_trans", "Log transformations", value = TRUE),
       downloadLink('pdflink', "Download pdf")
     ),
     mainPanel(
       br(),
-      plotOutput("plot_all"),
+      plotlyOutput("plot_all"),
       textOutput("note"),
       uiOutput("plots")
     )

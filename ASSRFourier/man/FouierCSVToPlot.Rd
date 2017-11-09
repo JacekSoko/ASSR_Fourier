@@ -5,7 +5,7 @@
 \title{Draw a plot from CSV file}
 \usage{
 FouierCSVToPlot(data.path = NULL, dir = NULL, freq = c(400, 5000),
-  title = "", names = NULL, sqrt.trans = TRUE)
+  title = "", names = NULL, log.trans = TRUE, plotly = FALSE)
 }
 \arguments{
 \item{data.path}{path to file}
@@ -18,7 +18,9 @@ FouierCSVToPlot(data.path = NULL, dir = NULL, freq = c(400, 5000),
 
 \item{names}{names for plot legend}
 
-\item{sqrt.trans}{square root axist transformation}
+\item{log.trans}{square root axist transformation}
+
+\item{plotly}{if TRUE plot be generated in plotly}
 }
 \value{
 An object of class ggplot.

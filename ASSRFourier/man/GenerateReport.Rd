@@ -5,7 +5,7 @@
 \title{Generating reports form files}
 \usage{
 GenerateReport(data.path, freq = c(400, 4100), title = NA,
-  plot.all = TRUE, plot.single = FALSE, names = NULL, sqrt.trans = TRUE)
+  plot.all = TRUE, plot.single = FALSE, names = NULL, log.trans = TRUE)
 }
 \arguments{
 \item{data.path}{vector of paths to files.}
@@ -20,7 +20,7 @@ GenerateReport(data.path, freq = c(400, 4100), title = NA,
 
 \item{names}{names for plot legend}
 
-\item{sqrt.trans}{square root axist transformation}
+\item{log.trans}{square root axist transformation}
 }
 \value{
 A pdf report.

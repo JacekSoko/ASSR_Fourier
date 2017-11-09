@@ -7,7 +7,7 @@
 #' @param title a vecor of titles of the plots
 #' @param plot.all show plot with all samples
 #' @param plot.single show single plots
-#' @param sqrt.trans square root axist transformation
+#' @param log.trans square root axist transformation
 #' @param names names for plot legend
 #'
 #' @return A pdf report.
@@ -15,7 +15,7 @@
 #' @importFrom rmarkdown render
 #'
 #' @export
-GenerateReport <- function(data.path, freq=c(400,4100), title=NA, plot.all=TRUE, plot.single=FALSE, names=NULL, sqrt.trans=TRUE){
+GenerateReport <- function(data.path, freq=c(400,4100), title=NA, plot.all=TRUE, plot.single=FALSE, names=NULL, log.trans=TRUE){
   directory <- getwd()
 
   environment <- new.env()
@@ -25,7 +25,7 @@ GenerateReport <- function(data.path, freq=c(400,4100), title=NA, plot.all=TRUE,
   environment$title <- title
   environment$plot.all <- plot.all
   environment$plot.single <- plot.single
-  environment$sqrt.trans <- sqrt.trans
+  environment$log.trans <- log.trans
 
 
 
