@@ -3,7 +3,7 @@ plotProfiles <- function(dir) {
   # read data
   files <- list.files(dir, full.names = TRUE)
   datasets <- lapply(files, function(file) {
-    dat <- read.csv(file, header = FALSE, skip = 2, sep=";", dec=",")
+    dat <- read.csv(file, header = FALSE, skip = 10, sep=";", dec=",")
     dat[1,2] <- "Freq"
     colnames(dat) <- dat[1,]
     dat <- gather(dat[-1,-1], time, value, -Freq)
